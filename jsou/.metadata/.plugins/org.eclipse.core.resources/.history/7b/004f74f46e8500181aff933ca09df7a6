@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+
+public class DtoTest_1 {
+	
+	ArrayList<StudentDto> list = new ArrayList<>();
+	
+	public void aa() {
+		String persons[] = new String[3];
+		persons[0] = "홍다희";
+		persons[1] = "이슬기";
+		persons[2] = "박정은";
+		for(String s:persons){
+			System.out.println(s);
+		}
+				
+	}
+
+	public void insertData() { //여러명의 학생 정보를 기억
+		StudentDto dto = new StudentDto();
+		dto.setHakbun("b493099");
+		dto.setIrum("경영");
+		dto.setJumsu(88);
+		
+		StudentDto dto2 = new StudentDto();
+		dto2.setHakbun("b493100");
+		dto2.setIrum("정오");
+		dto2.setJumsu(99);
+		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		DtoTest_1 test1 = new DtoTest_1();
+		test1.aa();
+		test1.insertData();
+
+	}
+
+}

@@ -1,0 +1,19 @@
+import java.util.HashMap;
+
+public class MapTest {
+
+	public static void main(String[] args) {
+		HashMap<String, String> list = new HashMap<>();
+		
+		list.put("0", "lee");
+		list.clear();
+		
+		list.put("0", "hong0");
+		list.put("1", "hong1");
+		list.put("2", "hong2");
+		list.put("3", "hong3");
+		list.put("4", "hong4");
+		list.put("5", "hong5");
+	}
+
+}

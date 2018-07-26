@@ -1,0 +1,15 @@
+import java.util.HashSet;
+
+import javax.print.attribute.HashAttributeSet;
+
+public class setTest {
+
+	public static void main(String[] args) {
+		HashSet<Object> list = new HashSet<>();
+		list.add("hong");
+		list.add(12);
+		TryTest test = new TryTest();
+		list.add(test);
+	}
+
+}

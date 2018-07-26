@@ -1,0 +1,39 @@
+package pack.gui;
+
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.border.Border;
+
+public class CalcTest extends JFrame implements ActionListener{
+	
+	public CalcTest() {
+		
+		setTitle("미니계산기");
+		setBounds(200, 200, 300, 400);
+		setVisible(true);
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	private void clacInput() {
+		setLayout(new GridLayout(5, 1));
+		
+		//1행
+		
+
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void main(String[] args) {
+		new CalcTest();
+	}
+
+}

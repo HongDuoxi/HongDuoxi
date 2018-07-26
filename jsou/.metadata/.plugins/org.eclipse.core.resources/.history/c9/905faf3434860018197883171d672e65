@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+import java.util.spi.CalendarDataProvider;
+
+public class PracTest_2 {
+	
+	ArrayList<PracDto_2> list = new ArrayList<>();
+	PracDto_2 prac;
+	
+	public void input(String[] args) {
+		
+		prac = new PracDto_2();
+		
+		for(int k = 0; k < args.length; k++) {
+			
+			StringTokenizer tok = new StringTokenizer(args[k], ",");
+			
+			int sabun = Integer.parseInt(tok.nextToken());
+			String name = tok.nextToken();
+			int basic = Integer.parseInt(tok.nextToken());
+			int year = Integer.parseInt(tok.nextToken());
+			
+			prac.setSabun(sabun);
+			prac.setName(name);
+			prac.setBasic(basic);
+			prac.setYear(year);
+		}
+	}
+	
+	public void print() {
+		
+		Calendar.
+		System.out.println(prac.getSabun() + prac.getName() + prac.getBasic() 
+		+ prac.getYear());
+		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		PracTest_2 test2 = new PracTest_2();
+		test2.input(args);
+		test2.print();
+		
+	}
+
+}

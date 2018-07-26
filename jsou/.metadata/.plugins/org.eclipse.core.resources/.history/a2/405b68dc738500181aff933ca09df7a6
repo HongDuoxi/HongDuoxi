@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class ExamTest {
+	
+	//Arraylist<Exam> list = new Arraylist<>();
+
+	public static void main(String[] args) {
+		
+		Exam exam = new Exam();
+		
+		Scanner ex = new Scanner(System.in);
+		System.out.println("이름입력: ");
+		String name = ex.next();
+		System.out.println("국어점수: ");
+		int kor = ex.nextInt();
+		exam.setKor(kor);
+		System.out.println("영어점수: ");
+		int eng = ex.nextInt();
+		exam.setEng(eng);
+		
+				
+
+	}
+
+}

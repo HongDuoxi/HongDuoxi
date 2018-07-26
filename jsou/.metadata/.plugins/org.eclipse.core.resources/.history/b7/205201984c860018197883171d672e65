@@ -1,0 +1,23 @@
+import java.util.Vector;
+
+public class VectorTest {
+
+	public static void main(String[] args) {
+		//Vector<Object> v = new Vector<>(5, 3);
+		Vector<Object> v = new Vector<>(); //<Object> 자리에 Integer를 적을 경우 Integer 타입만 들어 올 수 있음.
+		v.add('a'); //auto boxing: 기본형을 객체로 변환해서 저장
+					//Vector는 기본형이 아니라 객체만 담을 수 있다. 그러나 오토박싱을 통해 담아짐.
+					//Array 리스트도  기본형이 아니라 객체만 담을 수 있다.
+		v.addElement("홍다희");
+		v.add(100);
+		v.add(12.3456);
+		Vector<Object> vector = new Vector<>();
+		v.add(vector);
+		System.out.println("벡터 크기는 " + v.size());
+		
+		for(Object obj:v) {
+			System.out.println(obj);
+		}
+	}
+
+}

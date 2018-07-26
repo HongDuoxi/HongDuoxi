@@ -1,0 +1,45 @@
+package pack.thread;
+
+public class ThreadTest_1 extends Thread{
+	
+	public ThreadTest_1() {
+		
+	}
+	
+	public ThreadTest_1(String name) {
+		
+	}
+	
+	public void run() { //extends Thread하자마자 run이 오버라이드
+		for(int i = 1; i < 50; i++) {
+			System.out.print(i + " ");
+		}
+	}
+	
+	public static void main(String[] args) {
+		try {
+//			Process p1 = Runtime.getRuntime().exec("calc.exe");
+//			Process p2 = Runtime.getRuntime().exec("notepad.exe");
+//			p1.waitFor();
+//			p2.destroy();
+//			System.out.println("p1: " + p1.exitValue());
+//			System.out.println("p2: " + p2.exitValue());
+			
+//			ThreadTest_1 t1 = new ThreadTest_1();
+//			ThreadTest_1 t2 = new ThreadTest_1();
+//			t1.run();
+//			System.out.println();
+//			t2.run();
+			
+			ThreadTest_1 t1 = new ThreadTest_1();
+			ThreadTest_1 t2 = new ThreadTest_1();
+			t1.start(); //run() 이 자동으로 호출됨.
+			t2.start();
+			
+			System.out.println("프로그램 종료");
+		} catch(Exception e) {
+			System.out.println("err: " + e);
+		}
+	}
+
+}

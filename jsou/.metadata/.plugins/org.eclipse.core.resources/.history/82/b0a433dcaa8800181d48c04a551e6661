@@ -1,0 +1,42 @@
+package pack.gui;
+
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class SwingEx extends JFrame implements ActionListener{
+	JLabel lalShow; //Swing은 자바로 했고. 윈도우나 모바일에서도 사용 가능
+	int count = 0;
+	
+	public SwingEx() {
+		setTitle("Swing Test");
+		
+		JPanel panel = new JPanel();
+		panel.setLayout(new GridLayout(2, 1));
+		panel.setBackground(Color.CYAN);
+		
+		//getContentPane().add(panel); //이전에는 이렇게만 가능했는데
+		add("Center", panel); //이제는 이렇게도 가능
+		
+		setBounds(200, 200, 300, 300);
+		setVisible(true);
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //JFrame 종료하는 법
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void main(String[] args) {
+		new SwingEx();
+	}
+
+}

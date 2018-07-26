@@ -1,0 +1,16 @@
+package pack2;
+
+public class BreadMain {
+	
+	public static void main(String[] args) {
+		BreadPlate breadPlate = new BreadPlate();
+		
+		BreadMaker maker = new BreadMaker(breadPlate);
+		BreadEater eater = new BreadEater(breadPlate);
+		
+		maker.setPriority(8); //이게뭐지?
+		maker.start();
+		eater.start();
+	}
+
+}

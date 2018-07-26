@@ -1,0 +1,72 @@
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.StringTokenizer;
+import java.util.spi.CalendarDataProvider;
+
+public class PracTest_2 {
+	
+	ArrayList<PracDto_2> list = new ArrayList<>();
+	PracDto_2 prac;
+	
+	public void input(String[] args) {
+		
+		
+		for(int k = 0; k < args.length; k++) {
+			
+			StringTokenizer tok = new StringTokenizer(args[k], ",");
+			
+			int sabun = Integer.parseInt(tok.nextToken());
+			String name = tok.nextToken();
+			int basic = Integer.parseInt(tok.nextToken());
+			int year = Integer.parseInt(tok.nextToken());
+			
+			prac.setSabun(sabun);
+			prac.setName(name);
+			prac.setBasic(basic);
+			prac.setYear(year);
+			
+			list.add(prac);
+		}
+	}
+	
+	public void print() {
+		
+		Calendar life = Calendar.getInstance();
+		int y = life.get(Calendar.YEAR);
+		
+		int sudang;
+		if((y- prac.getYear())<=3) {
+			sudang = 150000;
+		}else if((y- prac.getYear())>=9) {
+			sudang = 1000000;
+		}else {
+			sudang = 450000;
+		}
+		
+		double gongje;
+		if((prac.getBasic()+sudang) >= 300) {
+			gongje = (prac.getBasic()+sudang) * 0.5;
+		} else if((prac.getBasic()+sudang) <= 200) {
+			gongje = (prac.getBasic()+sudang) * 0.15;
+		} else {
+			gongje = (prac.getBasic()+sudang) * 0.3;
+		}
+		
+		System.out.println("사번" + "\t" + "이름" + "\t" + "기본급" + "\t" + "근무년수"
+			+ "\t" + "근속수당" + "\t" + "공제액" + "\t" + "수령액");
+		System.out.println(prac.getSabun() + "\t" + prac.getName() + "\t" + 
+		prac.getBasic() + "\t" + (y- prac.getYear()) + "\t" + sudang + "\t" + (int)gongje);
+		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		PracTest_2 test2 = new PracTest_2();
+		test2.input(args);
+		test2.print();
+		
+	}
+
+}

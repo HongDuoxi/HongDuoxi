@@ -1,0 +1,17 @@
+package pack2;
+
+import java.io.IOException;
+
+public class IoTest_1 {
+	
+	public static void main(String[] args) throws IOException{
+		//1byte 단위의 입출력
+		
+		System.out.print("1바이트 입력: ");
+		int a = System.in.read(); //외부장치를 쓸 수 있으니까 예외처리를 해라..
+		System.out.println("입력값a: " + a + " " + (char)a);
+		
+		
+	}
+
+}

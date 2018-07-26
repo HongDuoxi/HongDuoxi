@@ -1,0 +1,103 @@
+package pack.gui;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.Scanner;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class MyMemoJang extends JFrame implements ActionListener{
+	JButton btnCopy = new JButton("Copy");
+	JButton btnPaste = new JButton("Paste");
+	JButton btnCut = new JButton("Cut");
+	JButton btnDel = new JButton("Del");
+	JPanel pn = new JPanel();
+	JTextArea txtMemo = new JTextArea("");
+	String copyText;
+	
+	public MyMemoJang() {
+		super("제목없음 - 메모장");
+		initLayout();
+		menuLayout();
+		
+		setBounds(200, 200, 400, 300);
+		setVisible(true);
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				int re = JOptionPane.showConfirmDialog(MyMemoJang.this, "정말 종료하시겠습니까?", "종료", JOptionPane.YES_NO_OPTION);
+			if(re == JOptionPane.YES_OPTION) {
+				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //JFrame을 종료할 때는 system.exit가 아니라 이렇게 해야 정말 종료가 됨. 공식이라고 생각해고 외워둬.
+			} else {
+				setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+			}
+			}
+		});
+	}
+	
+	private void initLayout() {
+		
+		//버튼 추가하기
+		pn.add(btnCopy);
+		pn.add(btnPaste);
+		pn.add(btnCut);
+		pn.add(btnDel);
+		add("South", pn);
+		
+		//스크롤바 만들기
+		JScrollPane pane = new JScrollPane(txtMemo);
+		//add("Center", txtMemo);
+		add("Center", pane);
+		
+		btnCopy.addActionListener(this);
+		btnPaste.addActionListener(this);
+		btnCut.addActionListener(this);
+		btnDel.addActionListener(this);
+	}
+	
+	private void menuLayout() {
+		
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == btnCopy) {
+			//System.out.println(txtMemo.getSelectedText()); //뒤지면 다 나와 선택한 값만 저장하기
+			copyText = txtMemo.getSelectedText(); //복사
+		} else if(e.getSource() == btnPaste) {
+			//txtMemo.setText(copyText); //기존 문자열 싹 없애고 덮어써버려;; 그 지점에만 딱! 붙여넣으려면?
+			int po = txtMemo.getCaretPosition();
+			txtMemo.insert(copyText, po);
+		} else if(e.getSource() == btnCut) {
+			copyText = txtMemo.getSelectedText(); //범위내의 문자열은 가지고 있어야 돼
+			
+			int start = txtMemo.getSelectionStart();
+			int end = txtMemo.getSelectionEnd();
+			
+			txtMemo.replaceRange("", start, end);
+			
+		} else if(e.getSource() == btnDel) {
+			
+		}
+		
+		txtMemo.requestFocus();
+		
+	}
+
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		new MyMemoJang();
+	}
+
+}

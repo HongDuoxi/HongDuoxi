@@ -1,0 +1,33 @@
+package pack.gui;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class MyMemoJang extends JFrame implements ActionListener{
+	JButton btnCopy = new JButton("Copy");
+	JButton btnPaste = new JButton("Paste");
+	JButton btnCut = new JButton("Cut");
+	JButton btnDel = new JButton("Del");
+	
+	public MyMemoJang() {
+		
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+	}
+
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		new MyMemoJang();
+	}
+
+}

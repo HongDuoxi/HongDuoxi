@@ -1,0 +1,58 @@
+package pack.gui;
+
+import java.awt.GridLayout;
+import java.awt.Label;
+import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class CalcTest extends JFrame implements ActionListener{
+	JTextField num1, num2;
+	
+	public CalcTest() {
+		super("미니계산기");
+		clacInput();
+		
+		setBounds(200, 200, 300, 400);
+		setVisible(true);
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	private void clacInput() {
+		setLayout(new GridLayout(5, 1));
+		
+		//1행
+		JLabel lbl_1 = new JLabel("숫자 1: ");
+		num1 = new JTextField("", 15);
+		JPanel pn1 = new JPanel();
+		pn1.add(lbl_1);
+		pn1.add(num1);
+		add(pn1);
+		
+		//2행
+		JLabel lbl_2 = new JLabel("숫자 2: ");
+		num2 = new JTextField("", 15);
+		JPanel pn2 = new JPanel();
+		pn2.add(lbl_2);
+		pn2.add(num2);
+		add(pn2);
+
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void main(String[] args) {
+		new CalcTest();
+	}
+
+}

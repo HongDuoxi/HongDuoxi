@@ -1,0 +1,19 @@
+import java.io.FileReader;
+
+public class TryTest {
+	
+	private void test() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static void main(String[] args) throws Exception{
+		// 예외처리 방법
+		//1. JVM에게 throw
+		//2. try ~ catch
+		
+		FileReader fr = new FileReader("c:/work/aa.txt");
+
+	}
+
+}

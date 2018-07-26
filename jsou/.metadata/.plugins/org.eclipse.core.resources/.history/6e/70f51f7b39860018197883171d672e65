@@ -1,0 +1,32 @@
+package pack2;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.nio.Buffer;
+
+public class IoTest_1 {
+	
+	public static void main(String[] args) throws IOException{
+		//1byte 단위의 입출력
+		
+		System.out.print("1바이트 입력: ");
+		int a = System.in.read(); //외부장치를 쓸 수 있으니까 예외처리를 해요.
+		System.out.println("입력값a: " + a + " " + (char)a);
+		
+		//문자열 출력
+		OutputStreamWriter os = new OutputStreamWriter(System.out); //여기서 out은 PrintStream
+		byte b = 97;
+		os.write(b); //출력하는 명령어
+		os.flush(); //비워주는 명령어
+		
+		//Buffer 사용: 입출력 성능 향상
+		BufferedWriter bw = new BufferedWriter(os, 1024); //1byte = 1024
+		PrintWriter out = new PrintWriter(bw);
+		out.println(123);
+		
+		
+	}
+
+}

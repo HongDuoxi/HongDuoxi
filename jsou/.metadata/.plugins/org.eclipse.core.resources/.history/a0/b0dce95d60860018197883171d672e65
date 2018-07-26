@@ -1,0 +1,22 @@
+package pack.thread;
+
+public class ThreadTest_1 {
+	
+	public ThreadTest_1() {
+		
+	}
+	
+	public ThreadTest_1(String name) {
+		
+	}
+	
+	public static void main(String[] args) {
+		try {
+			Process p1 = Runtime.getRuntime().exec("calc.exe");
+			Process p2 = Runtime.getRuntime().exec("notepad.exe");
+		} catch(Exception e) {
+			System.out.println("err: " + e);
+		}
+	}
+
+}

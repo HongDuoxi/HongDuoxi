@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+//import java.util.StringTokenizer;
+
+public class Dtotest_2 {
+	
+	ArrayList<HaksaengDto> list;
+	
+	public Dtotest_2() {
+		list = new ArrayList<HaksaengDto>();
+	}
+	
+	public void intputData(String[] datas) {
+		for(int i = 0; i < datas.length; i++) {
+			System.out.println(datas[i]);
+		}
+	}
+	
+	public void printData() {
+		
+	}
+
+	public static void main(String[] args) {
+		/*//StringTokenizer
+		String ss = "KBS,MBC,SBS";
+		StringTokenizer tok = new StringTokenizer(ss, ",");
+		System.out.println(tok.nextToken());
+		String s = tok.nextToken();
+		System.out.println(s);
+		*/
+		
+		String[] datas = new String[3];
+		datas[0] = "신선해,100,100,100";
+		datas[1] = "신기루,80,70,80";
+		datas[2] = "신기한,85,78,40";
+		
+		Dtotest_2 test2 = new Dtotest_2();
+		test2.intputData(datas);
+		test2.printData();
+		
+	}
+
+}

@@ -1,0 +1,64 @@
+import java.awt.image.AreaAveragingScaleFilter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+public class TryTest {
+	
+	public void ex() {
+		try {
+		int a[] = {1,2,3};
+		System.out.println("배열요소: " + a[5]);
+		} catch (Exception e) {
+			System.out.println("허걱 err" + e);
+		}
+	}
+	
+	public void ex2() {
+		try {
+			FileReader fr2 = new FileReader("c:\\work\\aa.txt");	
+		} catch (Exception e) {
+			System.out.println("허걱 파일 err" + e);
+		}
+		
+	}
+
+	//public static void main(String[] args) throws Exception{//에러 던지기
+	public static void main(String[] args) {
+		// 예외처리 방법
+		//1. JVM에게 throw
+		//2. try ~ catch
+		
+		
+		try {
+		//FileReader fr = new FileReader("c:/work/aa.txt");
+		FileReader fr = new FileReader("c:\\work\\aa.txt");
+		//맥이나 리눅스에서는 /를 쓰면 되지만 윈도우에서는 \\(백슬래시*2)를 써줘야 한다.
+		
+		int k = 10;
+		int re = k / 0;
+		System.out.println("re: " + re);
+		
+		//TryTest test = null; //NullPoint err
+		TryTest test = new TryTest();
+		test.ex(); 
+		test.ex2(); 
+		
+		}catch(FileNotFoundException e) {
+			System.out.println("파일이 없거나 경로 오류");
+		}
+		/*
+		catch(ArithmeticException e2) {
+			System.out.println("연산오류: " + e2.getMessage());
+		}catch(NullPointerException e3) {
+			e3.printStackTrace();
+			System.out.println(e3);
+		}catch(ArrayIndexOutOfBoundsException e4) {
+			System.out.println("배열 err: " + e4);
+		}*/
+		 catch(Exception e) { //err를 하나하나 잡을 게 아니면 Exception으로 잡으면 된다.
+			 System.out.println("에러: " + e);
+		 }
+		
+		System.out.println("프로그램 정상 종료");
+	}
+}

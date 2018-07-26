@@ -1,0 +1,25 @@
+package pack.thread;
+
+public class Treadtest_2 implements Runnable{
+	
+	public Treadtest_2() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Treadtest_2(String name) {
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public void run() {
+		for(int i = 1; i < 50; i++) {
+			System.out.println(i);
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

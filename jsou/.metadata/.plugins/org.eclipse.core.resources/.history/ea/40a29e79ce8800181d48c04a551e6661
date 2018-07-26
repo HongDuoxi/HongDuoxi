@@ -1,0 +1,83 @@
+package pack.gui;
+
+import java.awt.GridLayout;
+import java.awt.Label;
+import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
+public class CalcTest extends JFrame implements ActionListener{
+	JTextField num1, num2;
+	JRadioButton add, min, mul, div;
+	ButtonGroup butGrp = new ButtonGroup();
+	JLabel lblOk;
+	
+	public CalcTest() {
+		super("미니계산기");
+		clacInput();
+		
+		setBounds(200, 200, 300, 300);
+		setVisible(true);
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	private void clacInput() {
+		setLayout(new GridLayout(5, 1));
+		
+		//1행
+		JLabel lbl_1 = new JLabel("숫자 1: ");
+		num1 = new JTextField("", 20);
+		JPanel pn1 = new JPanel();
+		pn1.add(lbl_1);
+		pn1.add(num1);
+		add(pn1);
+		
+		//2행
+		JLabel lbl_2 = new JLabel("숫자 2: ");
+		num2 = new JTextField("", 20);
+		JPanel pn2 = new JPanel();
+		pn2.add(lbl_2);
+		pn2.add(num2);
+		add(pn2);
+		
+		//3행
+		add = new JRadioButton("+", true);
+		min = new JRadioButton("-", false);
+		mul = new JRadioButton("*", false);
+		div = new JRadioButton("/", false);
+		butGrp.add(add);
+		butGrp.add(min);
+		butGrp.add(mul);
+		butGrp.add(div);
+		JPanel pn3 = new JPanel();
+		pn3.add(new JLabel("연산선택: "));
+		pn3.add(add);
+		pn3.add(min);
+		pn3.add(mul);
+		pn3.add(div);
+		add(pn3);
+		
+		//4행
+		JLabel lbl_3 = new JLabel("결과");
+
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void main(String[] args) {
+		new CalcTest();
+	}
+
+}

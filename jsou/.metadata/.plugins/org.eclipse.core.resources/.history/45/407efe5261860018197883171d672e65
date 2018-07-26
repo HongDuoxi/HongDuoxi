@@ -1,0 +1,38 @@
+package pack.thread;
+
+public class ThreadTest_1 {
+	
+	public ThreadTest_1() {E
+		
+	}
+	
+	public void run() {
+		for(int i = 1; i < 50; i++) {
+			System.out.println(i + " ");
+		}
+	}
+	
+	public ThreadTest_1(String name) {
+		
+	}
+	
+	public static void main(String[] args) {
+		try {
+			Process p1 = Runtime.getRuntime().exec("calc.exe");
+			Process p2 = Runtime.getRuntime().exec("notepad.exe");
+			p1.waitFor();
+			p2.destroy();
+			System.out.println("p1: " + p1.exitValue());
+			System.out.println("p2: " + p2.exitValue());
+			
+			ThreadTest_1 t1 = new ThreadTest_1();
+			ThreadTest_1 t2 = new ThreadTest_1();
+			System.out.println();
+			t2.run();
+			
+		} catch(Exception e) {
+			System.out.println("err: " + e);
+		}
+	}
+
+}

@@ -1,0 +1,31 @@
+package pack.thread;
+
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+public class ThreadTest_3 extends Frame{
+	
+	Label lbl;
+	public ThreadTest_3() {
+		lbl = new Label("Display datetime", Label.CENTER);
+		add("Center", lbl);
+		
+		setTitle("Thread watch");
+		setBounds(200, 200, 300, 300);
+		setVisible(true);
+		
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+	}
+	
+	public static void main(String[] args) {
+		new ThreadTest_3();
+	}
+
+}

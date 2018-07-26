@@ -1,0 +1,29 @@
+package pack.gui;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+
+public class SwingEx extends JFrame implements ActionListener{
+	
+	public SwingEx() {
+		setTitle("Swing Test");
+		
+		setBounds(200, 200, 300, 300);
+		setVisible(true);
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //JFrame 종료하는 법
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void main(String[] args) {
+		new SwingEx();
+	}
+
+}

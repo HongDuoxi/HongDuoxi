@@ -1,0 +1,10 @@
+package pack.thread;
+
+public class Bank_ParkWife extends Thread{
+
+	@Override
+	public void run() {
+		super.run();
+	}
+	
+}

@@ -1,0 +1,31 @@
+package pack2;
+
+public class BreadPlate {
+	private int breadCount = 0;
+
+	public BreadPlate() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public synchronized void makeBread() {// synchronized: 동기화..가 뭐지?
+		if (breadCount >= 10) {
+			try {
+				System.out.println("빵 생산량 초과");
+			} catch (Exception e) {
+			}
+		}
+		breadCount++;
+		System.out.println("빵 생산 총량: " + breadCount + "개");
+	}
+
+	public synchronized void eatBread() {
+		if (breadCount < 1) {
+			try {
+				System.out.println("빵 소비 불가");
+			} catch (Exception e) {
+			}
+		}
+		breadCount--;
+		System.out.println("빵 소비 총량: " + breadCount + "개");
+	}
+}

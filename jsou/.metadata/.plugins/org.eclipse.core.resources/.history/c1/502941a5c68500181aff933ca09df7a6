@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+public class PracTest_2 {
+	
+	ArrayList<PracDto_2> list = new ArrayList<>();
+	
+	public void input(String[] args) {
+		
+		PracDto_2 prac = new PracDto_2();
+		
+		for(int k = 0; k < args.length; k++) {
+			
+			StringTokenizer tok = new StringTokenizer(args[k], ",");
+			
+			int sabun = Integer.parseInt(tok.nextToken());
+			String name = tok.nextToken();
+			int basic = Integer.parseInt(tok.nextToken());
+			int year = Integer.parseInt(tok.nextToken());
+			
+			prac.setSabun(sabun);
+			prac.setName(name);
+			prac.setBasic(basic);
+			prac.setYear(year);
+		}
+	}
+	
+	public void print() {
+		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		PracTest_2 test2 = new PracTest_2();
+		test2.input(args);
+		test2.print();
+		
+	}
+
+}

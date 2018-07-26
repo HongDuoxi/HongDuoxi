@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class ExamTest {
+	
+	//Arraylist<Exam> list = new Arraylist<>();
+
+	public static void main(String[] args) {
+		
+		Scanner ex = new Scanner(System.in);
+		System.out.println("이름입력: " + name);
+		name = 
+				
+
+	}
+
+}

@@ -1,0 +1,32 @@
+package pack.thread;
+
+public class Bank {
+
+	private int money = 10000; //공유자원
+	
+	public int getMoney() {
+		return money;
+	}
+	
+	public void setMoney(int money) {
+		this.money = money;
+	}
+	
+	//스레드의 동기화: 스레드 간 자원공유 ***synchronized
+	public synchronized void saveMoney(int save) { //입금
+		int m = this.getMoney();
+		try {
+			Thread.sleep(2000); //2초 비활성화
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		this.setMoney(m + save);
+	}
+	
+	
+	public synchronized void outMoney(int out) { //출금
+		int m = this.getMoney();
+		this.setMoney(m - out);
+	}
+
+}

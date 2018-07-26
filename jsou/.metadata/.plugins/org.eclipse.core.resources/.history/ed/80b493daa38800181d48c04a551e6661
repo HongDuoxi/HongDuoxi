@@ -1,0 +1,24 @@
+package pack.gui;
+
+import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class EventEx extends Frame implements ActionListener{
+	
+	public EventEx() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void main(String[] args) {
+		new EventEx();
+
+	}
+
+}

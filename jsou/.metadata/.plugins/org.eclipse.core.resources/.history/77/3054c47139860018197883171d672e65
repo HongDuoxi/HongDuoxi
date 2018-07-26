@@ -1,0 +1,24 @@
+package pack2;
+
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
+public class IoTest_1 {
+	
+	public static void main(String[] args) throws IOException{
+		//1byte 단위의 입출력
+		
+		System.out.print("1바이트 입력: ");
+		int a = System.in.read(); //외부장치를 쓸 수 있으니까 예외처리를 해요.
+		System.out.println("입력값a: " + a + " " + (char)a);
+		
+		//문자열 출력
+		OutputStreamWriter os = new OutputStreamWriter(System.out); //여기서 out은 PrintStream
+		byte b = 97;
+		os.write(b);
+		os.flush();
+		
+		
+	}
+
+}

@@ -1,0 +1,57 @@
+package pack.gui;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.JFrame;
+
+public class PackMan extends JFrame implements KeyListener{
+	Image image;
+	int x, y;
+	int sel = 1;
+	
+	public PackMan() {
+		super("상하좌우 화살표를 사용하세요");
+		
+		setLayout(null);
+		setResizable(false); //창 크기 조절 안할거야
+		setIconImage(Toolkit.getDefaultToolkit().getImage("c:/work/packman/pack1.jpg")); //상단 이미지 바꾸는 법
+		
+		setBounds(200, 200, 300, 300);
+		setBackground(Color.WHITE);
+		setVisible(true);
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		x = getWidth() / 2;
+		y = getHeight() / 2;
+	}
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		
+	}
+	
+	@Override
+	public void paint(Graphics g) { //붓이라고 생각해. 기본적으로 호출되는 메시지. 시스템에서 호출하는거야.
+		image = Toolkit.getDefaultToolkit().getImage("c:/work/packman/pack1.jpg");
+		g.clearRect(0, 0, getWidth(), getHeight()); //잔상을 지워주는 방법. getWidth(), getHeight() 좌우길이를 구할 수 있음.
+		g.drawImage(image, x, y, this);
+	}
+	
+	@Override
+	public void keyReleased(KeyEvent e) {}
+	
+	@Override
+	public void keyTyped(KeyEvent e) {}
+
+	public static void main(String[] args) {
+		new PackMan();
+
+	}
+
+}

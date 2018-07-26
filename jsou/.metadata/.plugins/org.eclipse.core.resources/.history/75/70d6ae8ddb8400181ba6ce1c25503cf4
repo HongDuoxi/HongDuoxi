@@ -1,0 +1,16 @@
+import java.util.HashSet;
+
+import javax.print.attribute.HashAttributeSet;
+
+public class setTest {
+
+	public static void main(String[] args) {
+		HashSet<Object> list = new HashSet<>();//<Object> 이 안에 String을 쓰면 글이 아닌 숫자나 변수는 못 들어감 
+		list.add("hong");
+		list.add(12);
+		TryTest test = new TryTest();
+		list.add(test);
+		System.out.println(list.size());
+	}
+
+}

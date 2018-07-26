@@ -1,0 +1,12 @@
+import java.util.StringTokenizer;
+
+public class Dtotest_2 {
+
+	public static void main(String[] args) {
+		String ss = "KBS, MBC, SBS";
+		StringTokenizer tok = new StringTokenizer(ss, ",");
+		System.out.println(tok.nextToken());
+
+	}
+
+}
